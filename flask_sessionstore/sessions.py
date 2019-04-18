@@ -17,7 +17,7 @@ from flask.sessions import SessionInterface as FlaskSessionInterface
 from flask.sessions import SessionMixin, TaggedJSONSerializer
 from werkzeug.datastructures import CallbackDict
 from itsdangerous import Signer, BadSignature, want_bytes
-
+import hashlib
 
 PY2 = sys.version_info[0] == 2
 if not PY2:
@@ -70,7 +70,7 @@ class DynamoDBSession(ServerSideSession):
 
 class SessionInterface(FlaskSessionInterface):
     serializer = TaggedJSONSerializer()
-
+    
     @staticmethod
     def _generate_sid():
         return str(uuid4())
@@ -80,7 +80,7 @@ class SessionInterface(FlaskSessionInterface):
         if not app.secret_key:
             return None
         return Signer(app.secret_key, salt='flask-sessions',
-                      key_derivation='hmac')
+                      key_derivation='hmac', digest_method=hashlib.sha256)
 
 
 class NullSessionInterface(SessionInterface):
