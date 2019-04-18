@@ -1,0 +1,11 @@
+nose
+coveralls
+nose-timer
+pymongo
+flask-sqlalchemy
+pynamodb
+redis
+pylibmc
+boto3
+placebo
+mock
