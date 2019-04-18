@@ -142,6 +142,7 @@ class RedisSessionInterface(SessionInterface):
                 return self.session_class(data, sid=sid)
             except:
                 return self.session_class(sid=sid, permanent=self.permanent)
+        sid = self._generate_sid()
         return self.session_class(sid=sid, permanent=self.permanent)
 
     def save_session(self, app, session, response):
