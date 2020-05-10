@@ -4,35 +4,35 @@
 #
 #    pip-compile --upgrade --output-file test_requirements.txt test_requirements.in
 #
-boto3==1.9.132
+boto3==1.9.132            # via -r test_requirements.in
 botocore==1.12.132        # via boto3, pynamodb, s3transfer
 certifi==2019.3.9         # via requests
 chardet==3.0.4            # via requests
 click==7.0                # via flask
 coverage==4.5.3           # via coveralls
-coveralls==1.7.0
+coveralls==1.7.0          # via -r test_requirements.in
 docopt==0.6.2             # via coveralls
 docutils==0.14            # via botocore
-flask-sqlalchemy==2.3.2
+flask-sqlalchemy==2.3.2   # via -r test_requirements.in
 flask==1.0.2              # via flask-sqlalchemy
 idna==2.8                 # via requests
 itsdangerous==1.1.0       # via flask
 jinja2==2.10.1            # via flask
 jmespath==0.9.4           # via boto3, botocore
 markupsafe==1.1.1         # via jinja2
-mock==2.0.0
-nose-timer==0.7.5
-nose==1.3.7
+mock==2.0.0               # via -r test_requirements.in
+nose-timer==0.7.5         # via -r test_requirements.in
+nose==1.3.7               # via -r test_requirements.in, nose-timer
 pbr==5.1.3                # via mock
-placebo==0.9.0
-pylibmc==1.6.0
-pymongo==3.7.2
-pynamodb==3.3.3
+placebo==0.9.0            # via -r test_requirements.in
+pylibmc==1.6.0            # via -r test_requirements.in
+pymongo==3.7.2            # via -r test_requirements.in
+pynamodb==3.3.3           # via -r test_requirements.in
 python-dateutil==2.8.0    # via botocore, pynamodb
-redis==3.2.1
+redis==3.2.1              # via -r test_requirements.in
 requests==2.21.0          # via coveralls
 s3transfer==0.2.0         # via boto3
 six==1.12.0               # via mock, pynamodb, python-dateutil
 sqlalchemy==1.3.3         # via flask-sqlalchemy
 urllib3==1.24.2           # via botocore, requests
-werkzeug==0.15.2          # via flask
+werkzeug==0.15.3          # via flask
